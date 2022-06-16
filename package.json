@@ -1,0 +1,42 @@
+{
+  "name": "start-up-manager",
+  "version": "1.0.0",
+  "description": "Test start-up-manager project",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm run db:migrate",
+    "start": "node main.js",
+    "serve": "nodemon main.js",
+    "lint": "npm run lint:write",
+    "lint:write": "npx eslint --fix .",
+    "prepare": "husky install",
+    "db:migrate": "knex migrate:latest",
+    "db:unmigrate": "knex migrate:rollback"
+  },
+  "keywords": [
+    "start-up-manager",
+    "shortener"
+  ],
+  "author": "Oleksii Starovoitenko",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.9.0",
+    "config": "^3.3.7",
+    "datasource-sql": "^2.0.1",
+    "graphql": "^16.5.0",
+    "knex": "^2.1.0",
+    "pg": "^8.7.3",
+    "winston": "^3.7.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2"
+  }
+}
